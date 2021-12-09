@@ -330,7 +330,7 @@ select {
 /* primary-header */
 
 .logo {
-  margin: 1.5rem clamp(1.5rem, 5vw , 3.5rem);
+  margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
 }
 
 .primary-header {
@@ -404,7 +404,7 @@ select {
   .mobile-nav-toggle[aria-expanded='true'] {
     background-image: url(./assets/shared/icon-close.svg);
   }
-      
+
   .mobile-nav-toggle:focus-visible {
     outline: 5px solid white;
     outline-offset: 5px;
@@ -421,20 +421,32 @@ select {
   }
 }
 
-@media (min-width: 35em) and (max-width: 45em) {
+@media (min-width: 35em) and (max-width: 44.99em) {
   .primary-navigation a > span {
     display: none;
   }
 }
 
 @media (min-width: 45em) {
-  
+  .primary-header::after {
+    content: '';
+    display: block;
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin-right: -2.5rem;
+    background: hsl( var(--clr-white) / 0.25);
+    order: 1;
+  }
+
+  nav {
+    order: 2;
+  }
 
   .primary-navigation {
     margin-block: 2rem;
   }
 }
-
 
 .underline-indicators > * {
   cursor: pointer;
