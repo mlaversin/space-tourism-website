@@ -1,6 +1,6 @@
-/* ------------------- */
-/* Custom properties   */
-/* ------------------- */
+/* ------------------------------------------- */
+/* Custom properties                           */
+/* ------------------------------------------- */
 
 :root {
   /* colors */
@@ -45,9 +45,9 @@
   }
 }
 
-/* ------------------- */
-/* Reset               */
-/* ------------------- */
+/* -------------------------------------------- */
+/* Reset                                        */
+/* -------------------------------------------- */
 
 /* https://piccalil.li/blog/a-modern-css-reset/ */
 
@@ -123,9 +123,9 @@ select {
   }
 }
 
-/* ------------------- */
-/* Utility classes     */
-/* ------------------- */
+/* ------------------------------------------------ */
+/* Utility classes                                  */
+/* ------------------------------------------------ */
 
 /* general */
 
@@ -277,9 +277,9 @@ select {
   color: hsl(var(--clr-white) / 0.25);
 }
 
-/* ------------------- */
-/* Compontents         */
-/* ------------------- */
+/* -------------------------------------------------- */
+/* Components                                         */
+/* -------------------------------------------------- */
 
 .large-button {
   font-size: 2rem;
@@ -448,6 +448,8 @@ select {
   --gap: 2rem;
 }
 
+/* dot indicators */
+
 .dot-indicators > * {
   cursor: pointer;
   border: 0;
@@ -465,13 +467,15 @@ select {
   background-color: hsl(var(--clr-white) / 1);
 }
 
-/* ----------------------------- */
-/* Page specific background      */
-/* ----------------------------- */
+/* ----------------------------------------------------- */
+/* Page specific background                              */
+/* ----------------------------------------------------- */
+
 body {
   background-size: cover;
   background-position: bottom center;
 }
+
 /* home */
 .home {
   background-image: url(./assets/home/background-home-mobile.jpg);
@@ -491,6 +495,7 @@ body {
 }
 
 /* destination */
+
 .destination {
   background-image: url(./assets/destination/background-destination-mobile.jpg);
 }
@@ -509,6 +514,7 @@ body {
 }
 
 /* crew */
+
 .crew {
   background-image: url(./assets/home/background-crew-mobile.jpg);
 }
@@ -545,11 +551,9 @@ body {
   }
 }
 
-
-
-/* ----------------------------- */
-/* Layout                        */
-/* ----------------------------- */
+/* ------------------------------------------------------ */
+/* Layout                                                 */
+/* ------------------------------------------------------ */
 
 .grid-container {
   text-align: center;
@@ -567,7 +571,7 @@ body {
   grid-area: title;
 }
 
-/* destination layout */
+/* destination page layout */
 
 .grid-container--destination {
   --flow-space: 2rem;
@@ -603,7 +607,7 @@ body {
   font-size: 1.75rem;
 }
 
-/* crew layout */
+/* crew page layout */
 
 .grid-container--crew {
   --flow-space: 2rem;
@@ -632,6 +636,10 @@ body {
   color: hsl(var(--clr-white) / 0.5);
 }
 
+/* technology page layout */
+
+/* media queries : medium screens */
+
 @media (min-width: 35em) {
   .numbered-title {
     justify-self: start;
@@ -652,6 +660,8 @@ body {
       'image';
   }
 }
+
+/* media queries : large screens */
 
 @media (min-width: 45em) {
   .grid-container {
