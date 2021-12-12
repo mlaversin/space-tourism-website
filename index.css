@@ -1,6 +1,6 @@
-/* ------------------- */
-/* Custom properties   */
-/* ------------------- */
+/* ------------------------------------------- */
+/* Custom properties                           */
+/* ------------------------------------------- */
 
 :root {
   /* colors */
@@ -45,9 +45,9 @@
   }
 }
 
-/* ------------------- */
-/* Reset               */
-/* ------------------- */
+/* -------------------------------------------- */
+/* Reset                                        */
+/* -------------------------------------------- */
 
 /* https://piccalil.li/blog/a-modern-css-reset/ */
 
@@ -123,9 +123,9 @@ select {
   }
 }
 
-/* ------------------- */
-/* Utility classes     */
-/* ------------------- */
+/* ------------------------------------------------ */
+/* Utility classes                                  */
+/* ------------------------------------------------ */
 
 /* general */
 
@@ -277,9 +277,9 @@ select {
   color: hsl(var(--clr-white) / 0.25);
 }
 
-/* ------------------- */
-/* Compontents         */
-/* ------------------- */
+/* -------------------------------------------------- */
+/* Components                                         */
+/* -------------------------------------------------- */
 
 .large-button {
   font-size: 2rem;
@@ -470,8 +470,8 @@ select {
 /* numbered buttons */
 
 .numbered-button {
-  display: grid;
-  place-items: center;
+  /* display: grid; */
+  /* place-items: center; */
   padding: 0 1em;
   border-radius: 50%;
   aspect-ratio: 1;
@@ -484,19 +484,23 @@ select {
   border: 1px solid hsl(var(--clr-white));
 }
 
-.numbered-button.active {
+.numbered-button[aria-selected='true'] {
   color: hsl(var(--clr-dark));
   background-color: hsl(var(--clr-white));
 }
 
 
-/* ----------------------------- */
-/* Page specific background      */
-/* ----------------------------- */
+
+/* ----------------------------------------------------- */
+/* Page specific background                              */
+/* ----------------------------------------------------- */
+
+
 body {
   background-size: cover;
   background-position: bottom center;
 }
+
 /* home */
 .home {
   background-image: url(./assets/home/background-home-mobile.jpg);
@@ -516,6 +520,7 @@ body {
 }
 
 /* destination */
+
 .destination {
   background-image: url(./assets/destination/background-destination-mobile.jpg);
 }
@@ -534,6 +539,7 @@ body {
 }
 
 /* crew */
+
 .crew {
   background-image: url(./assets/home/background-crew-mobile.jpg);
 }
@@ -570,11 +576,9 @@ body {
   }
 }
 
-
-
-/* ----------------------------- */
-/* Layout                        */
-/* ----------------------------- */
+/* ------------------------------------------------------ */
+/* Layout                                                 */
+/* ------------------------------------------------------ */
 
 .grid-container {
   text-align: center;
@@ -592,12 +596,12 @@ body {
   grid-area: title;
 }
 
-/* destination layout */
+/* destination page layout */
 
 .grid-container--destination {
   --flow-space: 2rem;
   grid-template-areas:
-    'title'                 
+    'title'
     'image'
     'tabs'
     'content';
@@ -628,7 +632,7 @@ body {
   font-size: 1.75rem;
 }
 
-/* crew layout */
+/* crew page layout */
 
 .grid-container--crew {
   --flow-space: 2rem;
@@ -657,10 +661,11 @@ body {
   color: hsl(var(--clr-white) / 0.5);
 }
 
-/* technology layout */
+/* technology page layout */
 
 .grid-container--technology {
   --flow-space: 2rem;
+  align-self: start;
   grid-template-areas:
     'title'
     'image'
@@ -668,8 +673,19 @@ body {
     'content';
 }
 
+.grid-container--technology > picture {
+  grid-area: image;
+}
 
-/* layout media queries */
+.grid-container--technology > .dot-indicators {
+  grid-area: tabs;
+}
+
+.grid-container--technology > .technology-details {
+  grid-area: content;
+}
+
+/* media queries : medium screens */
 
 @media (min-width: 35em) {
   .numbered-title {
@@ -691,6 +707,8 @@ body {
       'image';
   }
 }
+
+/* media queries : large screens */
 
 @media (min-width: 45em) {
   .grid-container {
@@ -750,5 +768,4 @@ body {
     align-self: end;
     max-width: 90%;
   }
-  
 }
